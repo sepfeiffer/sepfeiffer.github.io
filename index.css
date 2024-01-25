@@ -1,9 +1,11 @@
 .bigHeader{
     justify-content: center;
+    align-self: center;
     color: blue;
 }
 
 .indexBody{
     justify-content: center;
+    align-self: center;
     color: yellow;
 }
