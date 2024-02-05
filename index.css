@@ -1,9 +1,19 @@
-.bigHeader {
+body {
     text-align: center;
-    color: black;
 }
 
-.indexBody {
-    text-align: center;
-    color: black;
+.bigHeader, .indexBody, #about, #resume, #portfolio, #contact {
+    margin: 0 auto;
+    max-width: 800px; /* Adjust this value based on your preference */
+    text-align: left; /* Reset text alignment for individual sections if needed */
+}
+
+/* Additional styling for other sections if needed */
+#about, #resume, #portfolio, #contact {
+    margin-top: 20px; /* Add some space between sections */
+}
+
+/* Style the footer */
+footer {
+    margin-top: 20px;
 }
