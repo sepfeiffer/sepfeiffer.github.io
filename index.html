@@ -11,10 +11,7 @@
     <!-- Main Page -->
     <header>
         <h1 class="bigHeader">Welcome!</h1>
-        <p class="indexBody">
-            <?php include './textfiles/welcome.txt'; ?>
-        </p>
-        
+        <p class="indexBody" id="welcomeText"></p>
     </header>
 
     <!-- About Me Section -->
@@ -41,7 +38,7 @@
         <div class="project">
             <img src="path/to/project1.jpg" alt="Project 1">
             <h3>iConnect</h3>
-            <p>iConnect is an application that takes student data inputed from the mobile app
+            <p>iConnect is an application that takes student data inputted from the mobile app
                 and sends it through the shared database to the web app, which then creates graphs of the data for professors.
                 The goal of the app was to get a better connection between students and professors at a university.
             </p>
@@ -64,5 +61,18 @@
         <p>&copy; 2024 Samuel Pfeiffer. All rights reserved.</p>
     </footer>
 
+    <!-- JavaScript to load welcome text -->
+    <script>
+        window.onload = function() {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("welcomeText").innerHTML = this.responseText;
+                }
+            };
+            xhttp.open("GET", "./textfiles/welcome.txt", true);
+            xhttp.send();
+        };
+    </script>
 </body>
 </html>
