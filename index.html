@@ -17,11 +17,7 @@
     <!-- About Me Section -->
     <section id="about">
         <h2>About Me</h2>
-        <p>I am a 2023 graduate with a Bachelor of Science in Computer Science from Wayne State University.
-            I have always enjoyed working with computers from a very young age, and like all aspects of them.
-            Professionally, I have been working with IT for about 2 years, while also working on web development on the side.
-        </p>
-        <p href="./textfiles/intro.txt">Read in detail</p>
+        <p id="aboutText"></p>
     </section>
 
     <!-- Resume Section -->
@@ -61,17 +57,28 @@
         <p>&copy; 2024 Samuel Pfeiffer. All rights reserved.</p>
     </footer>
 
-    <!-- JavaScript to load welcome text -->
+    <!-- JavaScript to load welcome and about text -->
     <script>
         window.onload = function() {
-            var xhttp = new XMLHttpRequest();
-            xhttp.onreadystatechange = function() {
+            // Load welcome text
+            var welcomeXhttp = new XMLHttpRequest();
+            welcomeXhttp.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200) {
                     document.getElementById("welcomeText").innerHTML = this.responseText;
                 }
             };
-            xhttp.open("GET", "./textfiles/welcome.txt", true);
-            xhttp.send();
+            welcomeXhttp.open("GET", "./textfiles/welcome.txt", true);
+            welcomeXhttp.send();
+
+            // Load about text
+            var aboutXhttp = new XMLHttpRequest();
+            aboutXhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("aboutText").innerHTML = this.responseText;
+                }
+            };
+            aboutXhttp.open("GET", "./textfiles/intro.txt", true);
+            aboutXhttp.send();
         };
     </script>
 </body>
